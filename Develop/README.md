@@ -1,16 +1,16 @@
-# TEST 1
-        
-                ## Description
-                This is a description.
-                
-                ## Installation
-                Just run node index.js in the CLI
-                
-                ## Usage
-                instructions tadsjfnaldhjcbsaidjbflajkdsfndsa
-                
-                ## Credits
-                Me, myself, and I
-                
-                ## License
-                MIT License
+# TITLEEEEEE
+
+## Description
+this is a short description
+
+## Installation
+step 1,2,3,4,5,6,7,8,9
+
+## Usage
+This is how you use th readme gen
+
+## Credits
+me, myself, and I
+
+## License
+MIT License
