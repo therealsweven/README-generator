@@ -4,6 +4,8 @@ const fs = require("fs");
 
 // TODO: Create an array of questions for user input
 const questions = [
+  { type: "input", message: "What is your GitHub username?", name: "github" },
+  { type: "input", message: "What is your email address?", name: "email" },
   {
     type: "input",
     message: "What is your project Title?",
@@ -11,49 +13,50 @@ const questions = [
   },
   {
     type: "input",
-    message:
-      "Provide a short description explaining the what, why, and how of your project.",
+    message: "Provide a short description of your project.",
     name: "description",
   },
   {
     type: "input",
-    message:
-      "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
+    message: "What are the steps required to install your project? ",
     name: "installation",
   },
   {
     type: "input",
-    message: "Provide instructions and examples for use.",
+    message: "What does the user need to know about using the application?",
     name: "usage",
-  },
-  {
-    type: "input",
-    message:
-      "List your collaborators, if any, with links to their GitHub profiles.",
-    name: "credits",
   },
   {
     type: "list",
     message: "Choose a license:  ",
     name: "license",
     choices: [
-      "Apache License 2.0",
+      "Apache 2.0",
       "GNU General Public License",
-      "MIT License",
-      "BSD 2-Clause 'Simplified' License",
-      "BSD 3-Clause 'New' or 'Revised' License",
-      "Boost Software License 1.0",
+      "MIT",
+      "BSD 2-Clause 'Simplified'",
+      "BSD 3-Clause 'New' or 'Revised'",
+      "Boost Software 1.0",
       "Creative Commons Zero v1.0 Universal",
       "Eclipse Public License 2.0",
       "GNU Affero General Public License v3.0",
       "GNU General Public License v2.0",
       "GNU Lesser General Public License v2.1",
-      "Mozilla Public License 2.0",
+      "Mozilla Public 2.0",
       "The Unlicense",
     ],
   },
-  { type: "input", message: "What is your GitHub username?", name: "github" },
-  { type: "input", message: "What is your email address?", name: "email" },
+  {
+    type: "input",
+    message:
+      "List your collaborators, if any, including links to their GitHub profiles.",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "Please enter test instructions:",
+    name: "testing",
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -61,17 +64,27 @@ function writeToFile(fileName, response) {
   fs.writeFile(
     fileName,
     `# ${response.title}
-
+![GitHub License](https://img.shields.io/badge/License-${response.license.replace(
+      / /g,
+      "_"
+    )}-blue)
+        
 ## Description
 ${response.description}
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Questions](#Questions)
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#Questions)
 
 ## Installation
 ${response.installation}
@@ -79,11 +92,14 @@ ${response.installation}
 ## Usage
 ${response.usage}
 
-## Credits
-${response.credits}
-
 ## License
 ${response.license}
+
+## Contributing
+${response.contributing}
+
+## Tests
+${response.testing}
 
 ## Questions
 My Github profile is https://github.com/${response.github}/.
