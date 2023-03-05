@@ -65,6 +65,14 @@ function writeToFile(fileName, response) {
 ## Description
 ${response.description}
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Questions](#Questions)
+
 ## Installation
 ${response.installation}
 
