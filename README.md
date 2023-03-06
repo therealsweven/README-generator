@@ -6,6 +6,8 @@
 
 This is a CLI application meant to receive user input and generate a professional README.md file using the info the user entered when prompted with questions about the project.
 
+Link to walkthrough video: https://drive.google.com/drive/folders/1gIWkOS_BYO88BoOWRiAguE-fqEqAxdGX?usp=share_link
+
 ## Table of Contents
 
 - [Installation](#installation)
