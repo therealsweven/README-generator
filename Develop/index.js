@@ -63,7 +63,7 @@ const questions = [
 function writeToFile(fileName, response) {
   fs.writeFile(
     fileName,
-    `# ${response.title}
+    `# ${response.title}    
 ![GitHub License](https://img.shields.io/badge/License-${response.license.replace(
       / /g,
       "_"
@@ -114,7 +114,9 @@ Please reach out to ${response.email} with any additional questions.
 // TODO: Create a function to initialize app
 function init(questions) {
   inquirer
+    //prompt with questions array
     .prompt(questions)
+    //use response in the writeToFile function to created the README properly formatted in markdown
     .then((response) => writeToFile("README.md", response));
 }
 
